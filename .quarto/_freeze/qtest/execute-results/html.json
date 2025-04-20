@@ -1,0 +1,12 @@
+{
+  "hash": "6eb5beece3675a65e973424c392cc541",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"My PyKEP Project\"\nformat: html\njupyter: python3\nengine: jupyter\nkernel: pykep-env\n---\n\n```python\nimport pykep as pk\nfrom math import pi\n\n# Earth and Mars planetary ephemerides\nearth = pk.planet.jpl_lp(\"earth\")\nmars = pk.planet.jpl_lp(\"mars\")\n\n# Define departure and arrival dates (Modified Julian Dates)\ndeparture_date = pk.epoch(10000)  # MJD2000\narrival_date = pk.epoch(10300)\n\n# Get position and velocity vectors\nr1, v1 = earth.eph(departure_date)\nr2, v2 = mars.eph(arrival_date)\n\n# Lambert problem\nl = pk.lambert_problem(r1, r2, (arrival_date - departure_date).mjd * 86400, pk.MU_SUN)\n\n# Output the velocity\nprint(\"Lambert Transfer Velocity at Departure (km/s):\")\nprint(l.get_v1()[0])\n```\n\n",
+    "supporting": [
+      "qtest_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

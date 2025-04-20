@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Blog Test",
+    "section": "",
+    "text": "import pykep as pk\n\nearth = pk.planet.jpl_lp(\"earth\")\nmars = pk.planet.jpl_lp(\"mars\")\n\ndep = pk.epoch(10000)\narr = pk.epoch(10300)\n\nr1, _ = earth.eph(dep)\nr2, _ = mars.eph(arr)\n\ntof = (arr.mjd2000 - dep.mjd2000) * 86400\nlamb = pk.lambert_problem(r1, r2, tof, pk.MU_SUN)\n\nlamb.get_v1()[0]\n\n(14997.23930157594, -27871.526640838634, -813.6013109250553)"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  }
+]
